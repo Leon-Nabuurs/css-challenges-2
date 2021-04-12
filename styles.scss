@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
+
+@import 'constants.scss';
+
+/* Global */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  background-color: $achtergrond-pagina-grijs;
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  margin-top: 10px;
+
+  &-image {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin: 5px;
+    width: 300px;
+    height: 300px;
+
+    &__pasfoto {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      width: 300px;
+      height: 300px;
+      border-radius: $radius;
+      background-color: $filling-color;
+      opacity: 1;
+    }
+
+    &__pasfoto:hover {
+      animation-name: imagehoverout;
+      animation-duration: 1500ms;
+      animation-fill-mode: forwards;
+    }
+
+    &__stack {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      border-radius: $radius;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      background-color: $filling-color;
+      opacity: 0;
+    }
+
+    &__stack:hover {
+      animation-name: imagehoverin;
+      animation-duration: 1500ms;
+      animation-delay: 300ms;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &-block {
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    display: grid;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration-line: none;
+  }
+
+  &__read {
+    color: $readme-color;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+}
+
+@keyframes imagehoverin {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+@keyframes imagehoverout {
+  0% {opacity: 1}
+  100% {opacity: 0}
+}
