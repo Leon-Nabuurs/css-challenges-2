@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
+/* Global */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  background-color: #c3cfe2;
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.overview-image {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin: 5px;
+  width: 300px;
+  height: 300px;
+}
+.overview-image__pasfoto {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  background-color: black;
+  opacity: 1;
+}
+.overview-image__pasfoto:hover {
+  animation-name: imagehoverout;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+}
+.overview-image__stack {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: black;
+  opacity: 0;
+}
+.overview-image__stack:hover {
+  animation-name: imagehoverin;
+  animation-duration: 1500ms;
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
+}
+.overview-block {
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  display: grid;
+  align-items: center;
+}
+.overview__link {
+  text-decoration-line: none;
+}
+.overview__read {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+@keyframes imagehoverin {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes imagehoverout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
